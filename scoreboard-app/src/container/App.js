@@ -6,8 +6,8 @@ import Player from "../components/Player";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
+      <div className="scoreboard">
+        <Header title="Scoreboard" totalPlayers={1} />
         <Player />
       </div>
     );
