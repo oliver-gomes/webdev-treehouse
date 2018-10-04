@@ -25,6 +25,13 @@ class App extends Component {
     ]
   };
 
+  handleRemovePlayer = id => {
+    this.setState(prevState => {
+      return {
+        players: prevState.players.filter(p => p.id !== id)
+      };
+    });
+  };
   render() {
     return (
       <div className="scoreboard">
@@ -32,8 +39,10 @@ class App extends Component {
         {this.state.players.map(player => (
           <Player
             key={player.id.toString()}
+            id={player.id}
             name={player.name}
             score={player.score}
+            removePlayer={this.handleRemovePlayer}
           />
         ))}
       </div>
