@@ -5,15 +5,17 @@ import Player from "../components/Player";
 import { players } from "../components/players";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="scoreboard">
         <Header title="Scoreboard" totalPlayers={1} />
-
-        <Player name="Harry" score={50} />
-        <Player name="Cedric" score={45} />
-        <Player name="Krum" score={35} />
-        <Player name="Fleur" score={20} />
+        {this.props.initialPlayers.players.map(player => (
+          <Player name={player.name} score={player.score} />
+        ))}
       </div>
     );
   }
