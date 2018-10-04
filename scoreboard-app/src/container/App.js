@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "../components/Header";
 import Player from "../components/Player";
-import { players } from "../components/players";
 
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
   }
 
   render() {
