@@ -12,9 +12,16 @@ class App extends Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header title="Scoreboard" totalPlayers={1} />
+        <Header
+          title="Scoreboard"
+          totalPlayers={this.props.initialPlayers.players.length}
+        />
         {this.props.initialPlayers.players.map(player => (
-          <Player name={player.name} score={player.score} />
+          <Player
+            key={player.id.toString()}
+            name={player.name}
+            score={player.score}
+          />
         ))}
       </div>
     );
